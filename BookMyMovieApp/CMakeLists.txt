@@ -31,14 +31,12 @@ FetchContent_Declare(
 # Populate the content
 FetchContent_MakeAvailable(googletest)
 
-
-
 # Specify the output directory as an include directory
 include_directories(${PROJECT_SOURCE_DIR})
 include_directories(${PROJECT_BINARY_DIR})
 
 # Add the list of subdirectories
-add_subdirectory(Tests/)
+#add_subdirectory(Tests/)
 #add_subdirectory(DefModule/)
 
 set(SOURCES main.cpp)
