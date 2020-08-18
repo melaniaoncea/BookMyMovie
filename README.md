@@ -55,10 +55,19 @@ Note: googletest and google mock are not a prerequisite as they are automaticall
 	- Build project from the command line
 	- Build project from your chosen IDE
 
-- 1. Building the project from the command line
-	- 1.1 Go to the directory where you have cloned the project
-		e.g. cloned repo is at C:\Projects\MovieBookingApp
-		cd C:\Projects\MovieBookingApp (Note: for Windows, the cd command can be used in a similar way in Ubuntu as well only with forward slashes)
+- 1. Building the project from the command line - out-of-place build is performed i.e., the source code, libraries, and executables are produced in a directory separate from the source code directory(ies).
+	mkdir build-BMMBusinessLogic
+	cd build-BMMBusinessLogic
+	cmake -G "MinGW Makefiles" \path\to\cloned\repository\BookMyMovie\BMMBusinessLogic
+Note: with this option, the doxygen documentation does not appear to be generated
+You can generate it manually following these steps:
+	- go to the appropriate source directory\docs\Doxyfile.in
+	- hardcode INPUT with paths sourceDirectory\src sourceDirectory\include
+	- hardcode OUTPUT_DIRECTORY to buildDirectory\docs
+	- close file and save changes
+	- run doxygen path\to\file\Doxyfile.in
+	- the documentation should be found under buildDirectory/docs/doc_doxygen
+
     
 - 2. Build project from your chosen IDE
     e.g. using QTCreator on Windows
@@ -96,6 +105,7 @@ Note: googletest and google mock are not a prerequisite as they are automaticall
 - tests were written using googletest and google mock libraries
 - if the libraries are not already installed on the machine building the projects, Cmake will download and build them
 - CMake code for generating it can be found under librarysourcefolder\cmake\GoogleTest-CMakeLists.txt.in
+- each test suite can be run one by one when the project is opened in QtCreator; Just select the test suite and then run;
 
 # Future improvements
  
