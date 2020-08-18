@@ -1,0 +1,7 @@
+get_filename_component(BMMBUSINESSLOGIC_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+
+if(NOT TARGET BMMBusinessLogic::BMMBusinessLogic)
+    include("${BMMBUSINESSLOGIC_CMAKE_DIR}/BMMBusinessLogicTargets.cmake")
+endif()
+
+set(BOOKMYMOVIEBUSINESSLOGIC_LIBRARIES BMMBusinessLogic::BMMBusinessLogic)
