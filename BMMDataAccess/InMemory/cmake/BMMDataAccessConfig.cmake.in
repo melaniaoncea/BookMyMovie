@@ -1,0 +1,9 @@
+get_filename_component(BMMDATAACCESS_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+
+list(APPEND CMAKE_MODULE_PATH ${BMMDATAACCESS_CMAKE_DIR})
+
+if(NOT TARGET BMMDataAccess::BMMDataAccess)
+    include("${BMMDATAACCESS_CMAKE_DIR}/BMMDataAccessTargets.cmake")
+endif()
+
+set(BMMDATAACCESS_LIBRARIES BMMDataAccess::BMMDataAccess)
