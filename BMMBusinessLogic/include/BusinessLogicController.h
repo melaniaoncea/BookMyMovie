@@ -18,7 +18,6 @@
 #include <string>
 
 #include <MoviesProvider.h>
-#include <AbstractBusinessLogicController.h>
 
 using std::shared_ptr;
 using std::unique_ptr;
