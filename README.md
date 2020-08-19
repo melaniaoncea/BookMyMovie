@@ -108,6 +108,11 @@ You can generate it manually following these steps:
 - each test suite can be run one by one when the project is opened in QtCreator; Just select the test suite and then run;
 
 # Future improvements
+- integrate gcov with Cmake to generate test coverage reports + integrate 
+- complete all the functionality
+- make multithreaded bookings. To make sure no other threads in the same instance book the same seats at the same time optimistic locking could be used.
+  If app can be used as a service for a web app, distributed locking could also be considered since there can be more instances of  the same app.
+
  
 # Some of the C++11 features used
  - initializer lists

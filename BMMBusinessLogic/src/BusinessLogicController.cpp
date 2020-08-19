@@ -16,3 +16,17 @@ vector<BMMBusinessLogic::Movie> BMMBusinessLogic::BusinessLogicController::getAl
 {
     return m_moviesProvider->allAvailableMovies();;
 }
+
+vector<BMMBusinessLogic::Theater> BMMBusinessLogic::BusinessLogicController::getTheatersByMovieId(unsigned int selectedMovieId)
+{
+    return  m_showProvider->alltheatersForSelectedMovie(selectedMovieId);
+}
+
+vector<BMMBusinessLogic::Seat> BMMBusinessLogic::BusinessLogicController::searchAvailableSeatsByMovieAndTheaterIds(unsigned int selectedMovieId, unsigned int selectedTheaterId)
+{
+    vector<BMMBusinessLogic::Seat> result;
+    auto Show = m_showProvider->findShowByMovieAndTheaterIDs(selectedMovieId, selectedTheaterId);
+
+    return result;
+}
+

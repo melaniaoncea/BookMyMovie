@@ -15,16 +15,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Create target and set properties
 add_library(BMMBusinessLogic
     src/Booking.cpp
-    src/Booking.h
     src/Movie.cpp
     src/Seat.cpp
-    src/Seat.h
     src/Show.cpp
-    src/Show.h
     src/Theater.cpp
-    src/Theater.h
     src/BusinessLogicController.cpp
     src/MoviesProvider.cpp
+    src/ShowProvider.cpp
+    src/BookableSeat
 )
 
 # Set VERSION property for the project

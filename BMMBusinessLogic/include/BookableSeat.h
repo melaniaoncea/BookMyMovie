@@ -1,0 +1,4 @@
+#ifndef BOOKABLESEAT_H
+#define BOOKABLESEAT_H
+
+#endif // BOOKABLESEAT_H

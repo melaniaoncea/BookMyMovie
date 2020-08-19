@@ -1,7 +1,7 @@
 ///
 /// \file Seat.h
 ///
-/// \brief Holds movie related info
+/// \brief Holds seat related info
 ///
 /// \author Melania Oncea
 /// \date 2020 08 17
@@ -17,6 +17,11 @@
 
 using std::string;
 
+///
+/// \brief Global const variable that holds the default seat name;
+/// It will be used as the root string for m_seatName when the value
+/// received in constructor is equal to empty string
+///
 extern const string defaultSeatNameRoot;
 
 namespace BMMBusinessLogic {
@@ -48,7 +53,6 @@ namespace BMMBusinessLogic {
         static unsigned int nextId;
         string m_seatName;
     };
-
 }
 
 #endif // SEAT_H

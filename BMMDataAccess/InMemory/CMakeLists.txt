@@ -15,7 +15,7 @@ find_package(BMMBusinessLogic REQUIRED)
 # Create target and set properties
 add_library(BMMDataAccess
     src/MovieRepository.cpp
-    src/TheaterRepository.cpp
+    src/ShowRepository.cpp
 )
 
 # Set VERSION property for the project
