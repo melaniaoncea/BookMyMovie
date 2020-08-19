@@ -33,14 +33,14 @@ namespace BMMBusinessLogic {
         /// \param  movieId Movie id selected by the user
         /// \since 1.0
         ///
-        virtual  vector<Theater> findTheaterByMovieId(int movieId) const = 0;
+        virtual  vector<Theater> findTheaterByMovieId(unsigned int movieId) const = 0;
 
         /// \brief When implemented, returns a list of the theaters that play a certain movie
         /// \param movieId Movie id selected by the user
         /// \param theaterId Theater id selected by the user
         /// \since 1.0
         ///
-        virtual  Show findShowByMovieAndTheaterIds(int movieId, int theaterId) const = 0;
+        virtual  Show findShowByMovieAndTheaterIds(unsigned int movieId, unsigned int theaterId) = 0;
 
     };
 }

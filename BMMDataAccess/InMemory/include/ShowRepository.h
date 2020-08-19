@@ -39,14 +39,14 @@ namespace BMMDataAccess {
         /// \param  movieId Movie id selected by the user
         /// \since 1.0
         ///
-        virtual vector<BMMBusinessLogic::Theater> findTheaterByMovieId(int movieId) const override;
+        virtual vector<BMMBusinessLogic::Theater> findTheaterByMovieId(unsigned int movieId) const override;
 
         /// \brief When implemented, returns a list of the theaters that play a certain movie
         /// \param movieId Movie id selected by the user
         /// \param theaterId Theater id selected by the user
         /// \since 1.0
         ///
-        virtual BMMBusinessLogic::Show findShowByMovieAndTheaterIds(int movieId, int theaterId) const override;
+        virtual BMMBusinessLogic::Show findShowByMovieAndTheaterIds(unsigned int movieId, unsigned theaterId) override;
 
     private:
         vector<BMMBusinessLogic::Seat> createSeatsList();

@@ -21,6 +21,8 @@ add_library(BMMBusinessLogic
     src/Theater.cpp
     src/BusinessLogicController.cpp
     src/MoviesProvider.cpp
+    src/ShowProvider.cpp
+    src/BookableSeat
 )
 
 # Set VERSION property for the project
