@@ -1,17 +1,20 @@
 #include <gtest/gtest.h>
 #include <MovieRepository.h>
+#include <Movie.h>
 
 using namespace testing;
 using namespace BMMDataAccess;
 
 TEST(GetAllMovies, GetDefaultMovieList){
     MovieRepository movieRepository;
-    list<string> allMovieTitles = movieRepository.getAllMovieTitles();
-    list<string> expectedResults;
-    expectedResults.push_back("Schindler's List");
-    expectedResults.push_back("Pride and Prejudice");
-    expectedResults.push_back("To Kill a Mockingbird");
-    EXPECT_EQ(allMovieTitles, expectedResults);
+    vector<BMMBusinessLogic::Movie> allMovieTitles = movieRepository.getAllMovies();
+    EXPECT_EQ(allMovieTitles.size(), 3);
+    EXPECT_EQ(allMovieTitles.at(0).movieId(), 1);
+    EXPECT_EQ(allMovieTitles.at(1).movieId(), 2);
+    EXPECT_EQ(allMovieTitles.at(2).movieId(), 3);
+    EXPECT_EQ(allMovieTitles.at(0).movieName(), "To kill a mocking bird");
+    EXPECT_EQ(allMovieTitles.at(1).movieName(), "Schindler's List");
+    EXPECT_EQ(allMovieTitles.at(2).movieName(), "Pride and Prejudice");
 }
 
 int main(int argc, char **argv)

@@ -15,7 +15,9 @@
 
 #include <AbstractAllMoviesFetcher.h>
 
-namespace BMMDataAccess{
+namespace BMMDataAccess {
+    class Movie;
+
     ///
     /// \class MovieRepository MovieRepository.h implements an abstract class from BusinessLogic lib
     ///
@@ -31,10 +33,10 @@ namespace BMMDataAccess{
         /// \brief Returns the predefined list of movie titles
         /// \since 1.0
         ///
-        virtual  list<string> getAllMovieTitles() const override;
+        virtual  vector<BMMBusinessLogic::Movie> getAllMovies() const override;
 
     private:
-        list<string> m_movieTitlesList;
+        vector<BMMBusinessLogic::Movie> m_movieTitlesList;
     };
 }
 

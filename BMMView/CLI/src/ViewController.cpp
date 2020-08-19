@@ -43,7 +43,7 @@ void ViewController::processMenuOption(Menu menuType, int option)
     if (option == 1) {
         switch (menuType)
         {
-            case Menu::MainMenu : displayAllMovies(m_businessLogicController->getAllMovies()); break;
+            case Menu::MainMenu : convertMoviesList(m_businessLogicController->getAllMovies()); break;
             case Menu::MoviesMenu : readSelectedMovie(); break;
             case Menu::TheatersMenu : displayTheathersPlayingMovie(); break;
             case Menu::TheaterSelectionMenu: readSelectedTheater(); break;
@@ -140,4 +140,18 @@ void ViewController::displayEndMenu()
 void ViewController::bookSeats()
 {
 
+}
+
+void ViewController::convertMoviesList(vector<BMMBusinessLogic::Movie> moviesList)
+{
+    vector<vector<string>> convertedList;
+
+    for(auto const & movie : moviesList) {
+        vector<string> result;
+        result.push_back(std::to_string(movie.movieId()));
+        result.push_back(movie.movieName());
+        convertedList.push_back(result);
+    }
+
+    displayAllMovies(convertedList);
 }

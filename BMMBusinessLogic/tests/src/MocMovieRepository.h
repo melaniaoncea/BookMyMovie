@@ -3,17 +3,17 @@
 
 #include "gmock/gmock.h"
 #include "AbstractAllMoviesFetcher.h"
+#include "Movie.h"
 
-#include <list>
-#include <string>
+#include <vector>
 
-using std::list;
+using std::vector;
 using std::string;
 
 class MocMovieRepository : public BMMBusinessLogic::AbstractAllMoviesFetcher
 {
 public:
-    MOCK_METHOD(list<string>, getAllMovieTitles, (), (const, override));
+    MOCK_METHOD(vector<BMMBusinessLogic::Movie>, getAllMovies, (), (const, override));
 };
 
 #endif // MOCMOVIEREPOSITORY_H

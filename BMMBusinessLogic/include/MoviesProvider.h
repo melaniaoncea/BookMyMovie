@@ -16,12 +16,10 @@
 #include <Movie.h>
 
 #include <memory>
-#include <list>
-#include <string>
+#include <vector>
 
 using std::shared_ptr;
-using std::list;
-using std::string;
+using std::vector;
 
 namespace BMMBusinessLogic {
     class AbstractAllMoviesFetcher;
@@ -44,10 +42,10 @@ namespace BMMBusinessLogic {
         /// \return list of Movie objects (Movie Id and Movie Name)
         /// \since 1.0
         ///
-        list<BMMBusinessLogic::Movie> allAvailableMovies() const;
+        vector<BMMBusinessLogic::Movie> allAvailableMovies() const;
 
     private:
-        list<BMMBusinessLogic::Movie> m_allAvailableMovies;
+        vector<BMMBusinessLogic::Movie> m_allAvailableMovies;
     };
 
 }

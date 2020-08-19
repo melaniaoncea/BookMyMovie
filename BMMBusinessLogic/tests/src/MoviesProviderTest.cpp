@@ -16,34 +16,41 @@ using std::shared_ptr;
 
 TEST(AllAvailableMovies, CanReturnAllMovies){
     shared_ptr<MocMovieRepository> movieRepository (new MocMovieRepository());
-    const list<string> expectedMoviesTitles {"Movie 1", "Movie 2", "Movie 3"};
-    EXPECT_CALL((*movieRepository), getAllMovieTitles())
-        .Times(1)
-        .WillOnce(Return(expectedMoviesTitles));
-    MoviesProvider movieProvider {movieRepository};
-    list<Movie> returnedMovies = movieProvider.allAvailableMovies();
-    ASSERT_TRUE(!returnedMovies.empty());
-    const list<int> expectedMoviesIds {1, 2, 3};
-    list<int> actualMoviesIds;
-    list<string> actualMoviesTitles;
-    for (auto const & movie  : returnedMovies) {
-        actualMoviesIds.push_back(movie.movieId());
-        actualMoviesTitles.push_back(movie.movieName());
-    }
+    vector<Movie> expectedMovies;
+    string movieName {"Movie1"};
+    Movie movie1 {movieName};
+    expectedMovies.push_back(movie1);
+    movieName = "Movie2";
+    Movie movie2 {movieName};
+    expectedMovies.push_back(movie2);
+    movieName = "Movie3";
+    Movie movie3 {movieName};
+    expectedMovies.push_back(movie3);
 
-    EXPECT_EQ(actualMoviesIds, expectedMoviesIds);
-    EXPECT_EQ(actualMoviesTitles, expectedMoviesTitles);
+    EXPECT_CALL((*movieRepository), getAllMovies())
+        .Times(1)
+        .WillOnce(Return(expectedMovies));
+    MoviesProvider movieProvider {movieRepository};
+    vector<Movie> returnedMovies = movieProvider.allAvailableMovies();
+    ASSERT_TRUE(!returnedMovies.empty());
+    ASSERT_TRUE(returnedMovies.size() == 3);
+    EXPECT_EQ(returnedMovies.at(0).movieId(), expectedMovies.at(0).movieId());
+    EXPECT_EQ(returnedMovies.at(1).movieId(), expectedMovies.at(1).movieId());
+    EXPECT_EQ(returnedMovies.at(2).movieId(), expectedMovies.at(2).movieId());
+    EXPECT_EQ(returnedMovies.at(0).movieName(), expectedMovies.at(0).movieName());
+    EXPECT_EQ(returnedMovies.at(1).movieName(), expectedMovies.at(1).movieName());
+    EXPECT_EQ(returnedMovies.at(2).movieName(), expectedMovies.at(2).movieName());
 
 }
 
 TEST(AllAvailableMovies, ReturnsEmptyList){
     shared_ptr<MocMovieRepository> movieRepository (new MocMovieRepository());
-    const list<string> expectedMoviesTitles;
-    EXPECT_CALL((*movieRepository), getAllMovieTitles())
+    const vector<Movie> expectedMovies;
+    EXPECT_CALL((*movieRepository), getAllMovies())
         .Times(1)
-        .WillOnce(Return(expectedMoviesTitles));
+        .WillOnce(Return(expectedMovies));
     MoviesProvider movieProvider {movieRepository};
-    list<Movie> returnedMovies = movieProvider.allAvailableMovies();
+    vector<Movie> returnedMovies = movieProvider.allAvailableMovies();
     ASSERT_TRUE(returnedMovies.empty());
 }
 

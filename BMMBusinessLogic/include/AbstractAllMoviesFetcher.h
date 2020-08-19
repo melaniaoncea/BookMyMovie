@@ -13,12 +13,12 @@
 #ifndef ABSTRACTALLMOVIESFETCHER_H
 #define ABSTRACTALLMOVIESFETCHER_H
 
-#include<list>
-#include<string>
+#include<vector>
 
-using std::list;
-using std::string;
+using std::vector;
+
 namespace BMMBusinessLogic {
+    class Movie;
     ///
     /// \class AbstractAllMoviesFetcher AbstractAllMoviesFetcher.h
     ///
@@ -30,7 +30,7 @@ namespace BMMBusinessLogic {
         /// \brief When implemented, returns a list of movie titles
         /// \since 1.0
         ///
-        virtual  list<string> getAllMovieTitles() const = 0;
+        virtual  vector<Movie> getAllMovies() const = 0;
 
     };
 }

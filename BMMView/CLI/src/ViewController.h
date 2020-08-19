@@ -2,8 +2,14 @@
 #define VIEWCONTROLLER_H
 
 #include<BusinessLogicController.h>
+#include<Movie.h>
 
 #include <memory>
+#include <vector>
+#include <string>
+
+using std::vector;
+using std::string;
 
 using std::shared_ptr;
 
@@ -34,6 +40,7 @@ private:
     void readBookedSeats();
     void displayEndMenu();
     void bookSeats();
+    void convertMoviesList(vector<BMMBusinessLogic::Movie> moviesList);
 
 
 private:

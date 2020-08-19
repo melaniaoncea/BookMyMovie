@@ -3,16 +3,16 @@
 
 BMMBusinessLogic::MoviesProvider::MoviesProvider(shared_ptr<BMMBusinessLogic::AbstractAllMoviesFetcher> moviesFetcher)
 {
-    list<string> allMovieTitles = moviesFetcher->getAllMovieTitles();
+    vector<BMMBusinessLogic::Movie> allMovieTitles = moviesFetcher->getAllMovies();
     if (!allMovieTitles.empty()) {
-        for (string & movieTitle : allMovieTitles) {
+        for (auto & movieTitle : allMovieTitles) {
             BMMBusinessLogic::Movie movie {movieTitle};
             m_allAvailableMovies.push_back(movie);
         }
     }
 }
 
-list<BMMBusinessLogic::Movie> BMMBusinessLogic::MoviesProvider::allAvailableMovies() const
+vector<BMMBusinessLogic::Movie> BMMBusinessLogic::MoviesProvider::allAvailableMovies() const
 {
     return m_allAvailableMovies;
 }

@@ -44,11 +44,7 @@ namespace BMMBusinessLogic {
         /// \brief Returns all the available movies and their associated details
         /// \return The vector<vector<string>, e.g., {{"1", "MovieTitle1"}, {"2", "MovieTitle2"}}
         ///
-        vector<vector<string>> getAllMovies();
-
-    private:
-        // converts list<Movies> to vector<vector<string>>
-        vector<vector<string>>convertMoviesList();
+        vector<BMMBusinessLogic::Movie> getAllMovies();
 
     private:
         unique_ptr<BMMBusinessLogic::MoviesProvider> m_moviesProvider {nullptr};
