@@ -1,5 +1,5 @@
 ///
-/// \file BusinessLogicController
+/// \file BusinessLogicController.h
 ///
 /// \brief Contains core controller class of BusinessLogic lib
 ///
@@ -35,7 +35,7 @@ namespace BMMBusinessLogic {
     {
     public:
         /// \brief Create a new BusinessLogicController object
-        /// \param[in] moviesfetcher an object that implements AbstractAllMoviesFetcher and provides a list of movie titles
+        /// \param[in] moviesFetcher an object that implements AbstractAllMoviesFetcher and provides a list of movie titles
         /// \since 1.0
         ///
         BusinessLogicController(shared_ptr<BMMBusinessLogic::AbstractAllMoviesFetcher> moviesFetcher);

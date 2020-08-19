@@ -14,10 +14,10 @@
 #define THEATER_H
 
 #include <string>
-#include <list>
+#include <vector>
 
 using std::string;
-using std::list;
+using std::vector;
 
 ///
 /// \brief Global const variable that holds the default theater name;
@@ -44,7 +44,7 @@ namespace BMMBusinessLogic {
         /// \warning The use of default theater name format might result in duplicated theather names
         /// \since 1.0
         ///
-        Theater(string &theaterName, list<BMMBusinessLogic::Seat> theaterSeatsList);
+        Theater(string &theaterName, vector<BMMBusinessLogic::Seat> theaterSeatsList);
 
         ///
         /// \brief Return the theater Id
@@ -66,13 +66,13 @@ namespace BMMBusinessLogic {
         /// \return The theater seats list list<Seats>
         /// \since 1.0
         ///
-        list<BMMBusinessLogic::Seat> theaterSeatsList() const;
+        vector<BMMBusinessLogic::Seat> theaterSeatsList() const;
 
     private:
         static unsigned int nextTheaterId;
         unsigned int m_theaterId;
         string m_theaterName;
-        list<BMMBusinessLogic::Seat> m_theaterSeatsList;
+        vector<BMMBusinessLogic::Seat> m_theaterSeatsList;
 
     };
 }

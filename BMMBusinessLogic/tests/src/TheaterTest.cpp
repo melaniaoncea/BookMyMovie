@@ -4,16 +4,13 @@
 #include <Theater.h>
 #include <Seat.h>
 
-#include <string>
-#include <list>
-
 using namespace testing;
 using namespace BMMBusinessLogic;
 
 TEST(GetTheaterName, CreatedWithEmptyName){
     // A default unique name is returned
     string theaterName {""};
-    list<Seat> theaterSeatsList;
+    vector<Seat> theaterSeatsList;
     string seatName {"a1"};
     Seat seat1 {seatName};
     theaterSeatsList.push_back(seat1);
@@ -25,7 +22,7 @@ TEST(GetTheaterName, CreatedWithEmptyName){
 TEST(GetTheaterName, CreatedWithCustomName){
     // Custom theater name is returned
     string theaterName {"Reel Cinema"};
-    list<Seat> theaterSeatsList;
+    vector<Seat> theaterSeatsList;
     string seatName {"a1"};
     Seat seat1 {seatName};
     theaterSeatsList.push_back(seat1);
@@ -36,7 +33,7 @@ TEST(GetTheaterName, CreatedWithCustomName){
 TEST(GetTheaterName, CreatedUsingDefaultName){
     // Duplicate theater names might occur if using default naming as custom name
     string theaterName1 {""};
-    list<Seat> theaterSeatsList;
+    vector<Seat> theaterSeatsList;
     string seatName {"a1"};
     Seat seat1 {seatName};
     theaterSeatsList.push_back(seat1);
@@ -50,7 +47,7 @@ TEST(GetTheaterId, PreviouslyCreatedTheatersOutOfScope){
     // during one app run IDs are not reused
     // even if previously created objects are out of scope
     string theaterName {"ABC"};
-    list<Seat> theaterSeatsList;
+    vector<Seat> theaterSeatsList;
     string seatName {"b2"};
     Seat seat1 {seatName};
     theaterSeatsList.push_back(seat1);
@@ -62,7 +59,7 @@ TEST(GetTheaterId, PreviouslyCreatedTheaterDeleted){
     // during one run IDs are not reused
     // even if previously heap created objects are deleted
     string theaterName {"ABC"};
-    list<Seat> theaterSeatsList;
+    vector<Seat> theaterSeatsList;
     string seatName {"b2"};
     Seat seat1 {seatName};
     Theater* theater1 =  new Theater{theaterName, theaterSeatsList};
@@ -76,12 +73,12 @@ TEST(GetTheaterId, PreviouslyCreatedTheaterDeleted){
 TEST(GetTheaterSeatsList, NonEmptySeatList){
     // return the appropriate seat list
     string theaterName {"ABC"};
-    list<Seat> theaterSeatsList;
+    vector<Seat> theaterSeatsList;
     string seatName {"b2"};
     Seat seat1 {seatName};
     theaterSeatsList.push_back(seat1);
     Theater theater1 {theaterName, theaterSeatsList};
-    list<Seat> expectedSeatsList = theater1.theaterSeatsList();
+    vector<Seat> expectedSeatsList = theater1.theaterSeatsList();
     EXPECT_EQ(theaterSeatsList.size(), expectedSeatsList.size());
     EXPECT_EQ(theaterSeatsList.front().seatName(), expectedSeatsList.front().seatName());
 }
@@ -89,9 +86,9 @@ TEST(GetTheaterSeatsList, NonEmptySeatList){
 TEST(GetTheaterSeatsList, EmptySeatList){
     // return an empty seat list
     string theaterName {"ABC"};
-    list<Seat> theaterSeatsList;
+    vector<Seat> theaterSeatsList;
     Theater theater1 {theaterName, theaterSeatsList};
-    list<Seat> expectedSeatsList = theater1.theaterSeatsList();
+    vector<Seat> expectedSeatsList = theater1.theaterSeatsList();
     ASSERT_TRUE(expectedSeatsList.empty());
 }
 

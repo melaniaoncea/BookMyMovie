@@ -4,7 +4,7 @@
 const string defaultTheaterNameRoot {"DefaultTheaterName"};
 unsigned int BMMBusinessLogic::Theater::nextTheaterId {1};
 
- BMMBusinessLogic::Theater::Theater(string &theaterName, list<BMMBusinessLogic::Seat> theaterSeatsList)
+ BMMBusinessLogic::Theater::Theater(string &theaterName, vector<Seat> theaterSeatsList)
     : m_theaterId(nextTheaterId++)
     , m_theaterName(theaterName.empty() ? defaultTheaterNameRoot + std::to_string(m_theaterId)
                                         : theaterName)
@@ -22,7 +22,7 @@ string  BMMBusinessLogic::Theater::theaterName() const
     return m_theaterName;
 }
 
-list<BMMBusinessLogic::Seat>  BMMBusinessLogic::Theater::theaterSeatsList() const
+vector<BMMBusinessLogic::Seat> BMMBusinessLogic::Theater::theaterSeatsList() const
 {
     return m_theaterSeatsList;
 }
