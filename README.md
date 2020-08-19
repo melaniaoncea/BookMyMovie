@@ -137,4 +137,8 @@ How to interpret the diagram:
   
 2. Samples of some screen captures of the running app.
 - they are located in /resources folder
+
+# Answers to the REFLECTION section of the exercise
+most intersting: thinking about and implementing the architecture of the project, designing it by trying to respect clean architecture principles
+most combersome part: setting up the environment (exporting each library as a stand alone project, integrating google test in Cmake, integrating Doxygen in Cmake);
   
