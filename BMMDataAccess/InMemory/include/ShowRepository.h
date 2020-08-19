@@ -48,6 +48,7 @@ namespace BMMDataAccess {
         ///
         virtual BMMBusinessLogic::Show findShowByMovieAndTheaterIds(int movieId, int theaterId) const override;
 
+    private:
         vector<BMMBusinessLogic::Seat> createSeatsList();
 
     private:
