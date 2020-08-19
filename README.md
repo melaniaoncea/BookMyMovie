@@ -136,7 +136,7 @@ How to interpret the diagram:
   ![resources](./resources/BookMyMovieProjectOverview.svg)
   
 2. Samples of some screen captures of the running app.
-- they are located in /resources folder
+- they are located in ![resources](./resources) folder
 
 # Answers to the REFLECTION section of the exercise
 most intersting: thinking about and implementing the architecture of the project, designing it by trying to respect clean architecture principles
