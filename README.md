@@ -133,7 +133,7 @@ How to interpret the diagram:
 - The dotted line = a separator between what is implemented and what could be implemented
 - e.g. = examples of concrete classes in my project that fullfil the role mentioned above
 - The colored background = marks what is implemented
-  ![place folder](path/to/svg/)
+  ![resources](./resources/BookMyMovieProjectOverview.svg)
   
 2. Samples of some screen captures of the running app.
 - they are located in /resources folder
